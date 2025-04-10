@@ -1,0 +1,8 @@
+# This file is used to configure the Render service for the Book Music Vibes app.
+services:
+- type: web
+  name: book-music-vibes
+  runtime: python
+  buildCommand: pip install -r book_music_app/requirements.txt
+  startCommand: waitress-serve --port=$PORT app:app
+  autoDeploy: true
